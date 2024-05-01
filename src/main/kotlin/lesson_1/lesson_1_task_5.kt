@@ -1,38 +1,18 @@
 package org.example.lesson_1
 
 fun main() {
-    val nullPrefix: String = "0"
-    var secondsInCosmosTemp: Int = 6480 // – количество секунд
-    var temp: Int = secondsInCosmosTemp / 3600  //Получим часы
+    val hoursInCosmos: Int = SECONDS_IN_COSMOS / SECONDS_IN_HOUR   // – количество часов в космосе
+    val resHours = String.format("%s%s", NULL_STRING, hoursInCosmos)
+    val minutesInCosmos: Int = SECONDS_IN_COSMOS % SECONDS_IN_HOUR / SECONDS_IN_MINUTE
+    val secondsInCosmos: String =
+        String.format("%s%s", NULL_STRING, SECONDS_IN_COSMOS % SECONDS_IN_HOUR % SECONDS_IN_MINUTE)
+    println("Время, проведенное в космосе: $resHours : $minutesInCosmos : $secondsInCosmos")
 
-    val hoursInCosmos = addNullVoid(temp, nullPrefix)  ///Если надо, добавить ноль
 
-    if (temp != 0) {///Оставшееся после вычитания кол-ва часов кол-во секунд
-        secondsInCosmosTemp = secondsInCosmosTemp - 3600 * temp
-    }
-
-    temp = secondsInCosmosTemp / 60
-    val minutesInCosmos: String = addNullVoid(temp, nullPrefix)
-
-    secondsInCosmosTemp = secondsInCosmosTemp - temp * 60
-
-    val secondsInCosmos = addNullVoid(secondsInCosmosTemp, nullPrefix) //Итоговое количество сек
-
-    val stringToPrint = "Время, проведённое в космосе: $hoursInCosmos : $minutesInCosmos : $secondsInCosmos"
-    println(stringToPrint)
 }
 
-fun addNullVoid(temp: Int, nullPrefix: String): String {
-    //локальные переменные
-    var _nullPrefix = nullPrefix
-    val _temp = temp
+const val NULL_STRING: String = "0"
+const val SECONDS_IN_COSMOS: Int = 6480 // – общее количество секунд полёта
+const val SECONDS_IN_HOUR: Int = 3600 // Всего секунд в часе
+const val SECONDS_IN_MINUTE: Int = 60 // Всего секунд в часе
 
-    if (_temp / 10 < 1) {
-        _nullPrefix = "$_nullPrefix$temp"
-        return _nullPrefix
-    } else {
-        _nullPrefix = ""
-        _nullPrefix = "$_nullPrefix$_temp"
-        return _nullPrefix
-    }
-}
