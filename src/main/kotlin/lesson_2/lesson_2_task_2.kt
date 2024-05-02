@@ -12,7 +12,7 @@ fun main() {
     println("Средняя ЗП одного сотрудника после устройства стажеров: $averageSalarySum")
 }
 
-const val EMPLOYERS_NUM = 50
-const val EMPLOYERS_SALARY = 30000
-const val INTERNS_NUM = 30
-const val INTERNS_SALARY = 20000
+const val EMPLOYERS_NUM: Int = 50
+const val EMPLOYERS_SALARY: Int = 30000
+const val INTERNS_NUM: Int = 30
+const val INTERNS_SALARY: Int = 20000
