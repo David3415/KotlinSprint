@@ -5,7 +5,6 @@ fun main() {
     val departureMinute: Int = 39
     val departureMinutesTotal = departureMinute + departureHour * MINUTES_IN_HOUR
     val trainTravelTime: Int = 457
-
     println("Время прибытия поезда ${(departureMinutesTotal + trainTravelTime) / MINUTES_IN_HOUR}:${(departureMinutesTotal + trainTravelTime) % MINUTES_IN_HOUR} ")
 }
 
