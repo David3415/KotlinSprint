@@ -5,8 +5,13 @@ fun main() {
     val studentPoints2: Int = 4
     val studentPoints3: Int = 3
     val studentPoints4: Int = 5
-    val numOfStudents: Float = 4.0f
+    val numOfStudents: Int = 4
 
-    println(String.format("%.2f", (studentPoints1 + studentPoints2 + studentPoints3 + studentPoints4) / numOfStudents))
+    println(
+        String.format(
+            "%.2f",
+            (studentPoints1 + studentPoints2 + studentPoints3 + studentPoints4).toFloat() / numOfStudents
+        )
+    )
 
 }
