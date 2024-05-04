@@ -1,23 +1,24 @@
 package org.example.lesson_4
 
 fun main() {
+    var dayCount: Int = 2
+    var exerciseProgram: String
 
-    print("Наличие повреждений корпуса: ")
-    val shipsDamage = readln()
-    print("Текущий состав экипажа: ")
-    val numberOfCrew = readln()
-    print("Количество ящиков с провизией на борту: ")
-    val foodBoxCount = readln()
-    print("Благоприятность метеоусловий: ")
-    val weatherCondition = readln()
-    println(
-        "${
-            (shipsDamage == "нет" && numberOfCrew.toInt() >= CREW_COUNT_MIN && numberOfCrew.toInt() <= CREW_COUNT_MAX && foodBoxCount.toInt() >= FOOD_BOX_MIN) ||
-                    (numberOfCrew.toInt() == CREW_COUNT_MAX && foodBoxCount.toInt() >= FOOD_BOX_MIN && weatherCondition == "да")
-        }"
-    )
+    if (dayCount % 2 != 0) {
+        exerciseProgram = """
+        Упражнения для рук:    true
+        Упражнения для ног:    false
+        Упражнения для спины:  false
+        Упражнения для пресса: true
+    """.trimIndent()
+    } else {
+        exerciseProgram = """
+        Упражнения для рук:    false
+        Упражнения для ног:    true
+        Упражнения для спины:  true
+        Упражнения для пресса: false
+    """.trimIndent()
+    }
+    println(exerciseProgram)
 }
 
-const val CREW_COUNT_MIN: Int = 55
-const val CREW_COUNT_MAX: Int = 70
-const val FOOD_BOX_MIN: Int = 50
