@@ -2,18 +2,18 @@ package org.example.lesson_4
 
 fun main() {
     print("Наличие повреждений корпуса: ")
-    var shipDamage: String? = readLine()
+    val shipDamage: String? = readLine()
     print("Tекущий состав экипажа: ")
-    var shipCrew: String? = readLine()
+    val shipCrew: String? = readLine()
     print("Количество ящиков с провизией на борту: ")
-    var boxQuontity: String? = readLine()
+    val boxQuontity: String? = readLine()
     print("Благоприятность метеоусловий: ")
-    var weather: String? = readLine()
-
+    val weather: String? = readLine()
     println(
         "${
-            (shipDamage == "false" && shipCrew!!.toInt() >= SHIP_CREW_MIN && shipCrew!!.toInt() <= SHIP_CREW_MAX && boxQuontity!!.toInt() >= BOX_QUANTITY_MIN) ||
-                    (shipCrew!!.toInt() in SHIP_CREW_MIN..SHIP_CREW_MAX && boxQuontity!!.toInt() >= BOX_QUANTITY_MIN && weather == "true")
+            (shipDamage == "false" && shipCrew!!.toInt() >= SHIP_CREW_MIN && shipCrew!!.toInt() <= SHIP_CREW_MAX &&
+                    boxQuontity!!.toInt() >= BOX_QUANTITY_MIN) || (shipCrew!!.toInt() in SHIP_CREW_MIN..SHIP_CREW_MAX &&
+                    boxQuontity!!.toInt() >= BOX_QUANTITY_MIN && weather == "true")
         }"
     )
 }
