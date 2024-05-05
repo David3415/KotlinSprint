@@ -1,15 +1,15 @@
 package org.example.lesson_4
 
 fun main() {
-    var todayTableReservation: Int = 13
-    var tomorrowTableReservation: Int = 9
-    var infoStringToday: String = "Доступность столиков на сегодня:"
-    var infoStringTomorrow: String = "Доступность столиков на завтра:"
+    val todayTableReservation: Int = 13
+    val tomorrowTableReservation: Int = 9
+    val infoStringToday: String = "Доступность столиков на сегодня:"
+    val infoStringTomorrow: String = "Доступность столиков на завтра:"
 
-    var tablesAvailable: Boolean = (todayTableReservation == TABLES_QUANTITY)
+    var tablesAvailable: Boolean = (todayTableReservation < TABLES_QUANTITY)
     println("$infoStringToday $tablesAvailable")
 
-    tablesAvailable = (tomorrowTableReservation == TABLES_QUANTITY)
+    tablesAvailable = (tomorrowTableReservation < TABLES_QUANTITY)
     println("$infoStringTomorrow $tablesAvailable")
 }
 
